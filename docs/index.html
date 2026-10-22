@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diablo Class Randomizer</title>
+  <meta name="description" content="Pick a Diablo game and let fate pick your class. Works for Diablo, Diablo II: Resurrected, Diablo III, Diablo IV and Diablo Immortal.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Installable app (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Diablo Randomizer">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
+  <!-- Everything is laid out on a fixed 384 x 661 "stage" (same as the Windows version),
+       then scaled to fit whatever screen it's on. -->
+  <main id="stage" class="stage" aria-live="polite">
+
+    <!-- Title screen -->
+    <section id="screen-title" class="screen" data-bg="">
+      <div class="title-glow"></div>
+      <canvas id="embers" class="embers" width="384" height="661"></canvas>
+      <img class="title-logo" src="assets/images/diablotitle.png" alt="Diablo">
+      <h1 class="txt red glow title-name" data-text="CLASS RANDOMIZER">CLASS RANDOMIZER</h1>
+      <div class="txt bone-dim title-version" data-text="v1.4">v1.4</div>
+      <button class="diablo-btn" id="btn-start" style="left: 112px; top: 505px; width: 160px; height: 58px;">
+        <span class="txt btn-label" style="font-size: 20px;" data-text="START">START</span>
+      </button>
+      <div class="footer-line"></div>
+      <div class="txt bone footer" data-text="ZIMMEDIA LABS">ZIMMEDIA LABS</div>
+    </section>
+
+    <!-- Select game screen -->
+    <section id="screen-games" class="screen" data-bg="assets/images/gamepage.png" hidden>
+      <button class="game-tile" data-game="Diablo" style="top: 48px;" aria-label="Diablo">
+        <img src="assets/images/diablo1.jpg" alt="">
+      </button>
+      <button class="game-tile" data-game="Diablo II: Resurrected" style="top: 166px;" aria-label="Diablo II: Resurrected">
+        <img src="assets/images/diablo2.jpg" alt="">
+      </button>
+      <button class="game-tile" data-game="Diablo III" style="top: 284px;" aria-label="Diablo III">
+        <img src="assets/images/diablo3.jpg" alt="">
+      </button>
+      <button class="game-tile" data-game="Diablo IV" style="top: 402px;" aria-label="Diablo IV">
+        <img src="assets/images/diablo4.jpg" alt="">
+      </button>
+      <button class="game-tile" data-game="Diablo Immortal" style="top: 520px;" aria-label="Diablo Immortal">
+        <img src="assets/images/diabloimmortal.jpg" alt="">
+      </button>
+    </section>
+
+    <!-- Results screen -->
+    <section id="screen-result" class="screen" data-bg="" hidden>
+      <img class="result-logo" id="result-logo" alt="">
+      <div class="txt bone status" id="status" data-text="ROLLING...">ROLLING...</div>
+
+      <div class="banner-glow" id="banner-glow"></div>
+      <img class="banner" src="assets/images/randomclass.png" alt="">
+      <div class="txt class-name" id="class-name"></div>
+
+      <div class="panel" id="class-list">
+        <div class="txt bone-dim list-header" id="list-header"></div>
+        <div class="list-cells" id="list-cells"></div>
+      </div>
+
+      <button class="diablo-btn" id="btn-reroll" style="left: 112px; top: 470px; width: 160px; height: 54px;">
+        <span class="txt btn-label" style="font-size: 18px;" data-text="REROLL">REROLL</span>
+      </button>
+      <button class="diablo-btn" id="btn-back" style="left: 122px; top: 528px; width: 140px; height: 50px;">
+        <span class="txt btn-label" style="font-size: 16px;" data-text="BACK">BACK</span>
+      </button>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

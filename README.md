@@ -1,6 +1,6 @@
 Created a simple Diablo Class Randomizer after playing the D4 Beta and not having a clue on what class I would play at release. Pick your game and it picks your class.
 
-Works for Diablo | Diablo II: Resurrected | Diablo 3 | Diablo 4 | Diablo Immortal - Can be used as Web App here: https://zimmworks.github.io/Diablo-Class-Randomizer/
+Works for Diablo | Diablo II: Resurrected | Diablo 3 | Diablo 4 | Diablo Immortal - Can be used as Web App here: https://zimmedialabs.github.io/Diablo-Class-Randomizer/
 
 - UPDATED for Diablo IV: Lord of Hatred (Paladin and Warlock)
 - Warlock added to Diablo II: Resurrected
@@ -32,7 +32,7 @@ All Diablo art and sounds belong to Blizzard. Fan project, not affiliated with B
 > [!NOTE]
 > **Windows may show a SmartScreen warning** because the app isn't signed with a paid certificate. Click **More info → Run anyway**, or build it yourself:
 > ```powershell
-> git clone https://github.com/ZiMMworks/Diablo-Class-Randomizer
+> git clone https://github.com/ZiMMediaLabs/Diablo-Class-Randomizer
 > cd Diablo-Class-Randomizer
 > dotnet build "Diablo Class Randomizer.csproj" -c Release
 > ```
